@@ -1,0 +1,31 @@
+{
+  "name": "mockapi",
+  "version": "1.0.0",
+  "description": "This is a mock api for testing",
+  "homepage": "https://github.com/kjsninja/mockapi#readme",
+  "bugs": {
+    "url": "https://github.com/kjsninja/mockapi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjsninja/mockapi.git"
+  },
+  "license": "MIT",
+  "author": "Ken Crucillo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "prod:start": "pm2 start app.js --name \"mock-api\"",
+    "prod:stop": "pm2 delete \"mock-api\""
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "joi": "^18.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
