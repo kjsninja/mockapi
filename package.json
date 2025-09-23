@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "prod:start": "pm2 start app.js --name \"mock-api\"",
+    "prod:start": "pm2 start index.js --name \"mock-api\"",
     "prod:stop": "pm2 delete \"mock-api\""
   },
   "dependencies": {
