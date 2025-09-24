@@ -10,5 +10,9 @@ module.exports = {
   },
   isDebug: () => {
     return [1,'1', true, 'true'].find(e=>e === process.env.DEBUG) ? true : false;
+  },
+  temp: {
+    user: "admin",
+    password: "P@ssw0rd"
   }
 }
