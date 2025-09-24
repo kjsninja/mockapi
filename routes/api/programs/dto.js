@@ -4,7 +4,8 @@ const sanitize = require('../../../helper/sanitize');
 
 const CreateValidQuery = joi.object({
   contractor: joi.string().min(1).max(200),
-  location: joi.string().min(1).max(100)
+  location: joi.string().min(1).max(100),
+  completion_date: joi.date(),
 })
 
 const checkValidQuery = function(req, res, next){

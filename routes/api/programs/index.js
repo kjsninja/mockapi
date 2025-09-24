@@ -11,6 +11,9 @@ router.get('/', [checkValidQuery], (req, res)=>{
   if(req.query.contractor){
     output = output.filter(e=>e.contractor.toLocaleLowerCase().includes(req.query.contractor.toLocaleLowerCase()));
   }
+  if(req.query.completion_date){
+    output = output.filter(e=>new Date(e.completion_date).getTime() == new Date(req.query.completion_date).getTime());
+  }
   res.json(output);
 });
 
