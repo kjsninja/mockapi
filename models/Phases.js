@@ -44,7 +44,7 @@ class Phases{
       where: {
         id
       }
-    })
+    }) || {}
   }
 
   async getAllPhaseByProgramId(program_id){
