@@ -8,11 +8,21 @@ const CreateValidQuery = joi.object({
   completion_date: joi.date(),
 })
 
+const CreateValidIdParams = joi.object({
+  id: joi.number().integer().required()
+})
+
 const checkValidQuery = function(req, res, next){
   const validate = CreateValidQuery.validate(sanitize.trim(req.query));
   joiValidate(validate, req, res, next);
 }
 
+const checkValidParams = function(req, res, next){
+  const validate = CreateValidIdParams.validate(sanitize.trim(req.params));
+  joiValidate(validate, req, res, next);
+}
+
 module.exports = {
-  checkValidQuery
+  checkValidQuery,
+  checkValidParams
 }
