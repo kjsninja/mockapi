@@ -19,6 +19,7 @@
     "dev": "nodemon index.js",
     "dev2": "nodemon phase_runner/index.js",
     "migrate": "npx prisma migrate",
+    "db:push": "npx prisma db push",
     "prod:start": "pm2 start index.js --name \"mock-api\"",
     "prod:stop": "pm2 delete \"mock-api\"",
     "prod:start2": "pm2 start phase_runner/index.js --name \"mock-api2\"",
