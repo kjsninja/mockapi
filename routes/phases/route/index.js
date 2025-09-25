@@ -12,7 +12,13 @@ router.get('/programs/:id', [checkPhaseParamsId], async (req, res)=>{
 });
 
 router.put('/:id', [checkPhaseParamsId, checkUpdateRequest], async (req, res)=>{
-  return res.json(await Phases.updatePhase(parseInt(req.params.id), req.body))
+  if(req.body){
+    return res.json(await Phases.updatePhase(parseInt(req.params.id), req.body))
+  }else{
+    return res.status(400).json({
+      error: 'Body is required'
+    })
+  }
 });
 
 router.delete('/:id', [checkPhaseParamsId], async (req, res)=>{
@@ -24,7 +30,13 @@ router.get('/', async (req, res)=>{
 });
 
 router.post('/', [checkCreateRequest], async (req, res)=>{
-  return res.json(await Phases.create(req.body))
+  if(req.body){
+    return res.json(await Phases.create(req.body))
+  }else{
+    return res.status(400).json({
+      error: 'Body is required'
+    })
+  }
 });
 
 
