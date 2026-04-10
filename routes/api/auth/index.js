@@ -12,7 +12,7 @@ router.post('/', [checkBlankBody, checkLoginRequest], async (req, res)=> {
   const body = sanitize.trim(req.body);
 
   if(body.email == config.temp.user && body.password == config.temp.password){
-    res.send({
+    return res.send({
       message: 'OK'
     });
   }
